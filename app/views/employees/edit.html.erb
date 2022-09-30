@@ -1,0 +1,10 @@
+<h1 class="text-center">Editing employee</h1>
+
+<%= render "form", employee: @employee %>
+
+<br>
+
+<div class="ms-5">
+  <%= link_to "Show", @employee, class:"btn btn-info" %> |
+  <%= link_to "Back", employees_path, class:"btn btn-outline-dark" %>
+</div>
