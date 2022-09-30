@@ -12,19 +12,22 @@
 			      <th scope="col">LastName</th>
 			      <th scope="col">Email</th>
 			      <th scope="col">Phone</th>
+			      <th>User Id</th>
 			      <th colspan="2">Action</th>
 			    </tr>
 			  </thead>
 			  <tbody>
 			  	<% @employees.each do |employee| %>
-			    <tr>
-			      <th scope="row"><%= employee.first_name %></th>
-			      <td><%= employee.last_name %></td>
-			      <td><%= employee.email %></td>
-			      <td><%= employee.phone %></td>
-			      <td><%= link_to "Show Details", employee, class:"btn btn-info" %></td>
-			      <td><%= button_to "Delete", @employee, method: :delete, class:"btn btn-danger" %></td>
-			    </tr>
+				  	<% if employee.user == current_user %>
+					    <tr>
+					      <th scope="row"><%= employee.first_name %></th>
+					      <td><%= employee.last_name %></td>
+					      <td><%= employee.email %></td>
+					      <td><%= employee.phone %></td>
+					      <td><%= employee.user_id %></td>
+					      <td><%= link_to "Show Details", employee, class:"btn btn-info" %></td>
+					    </tr>
+				    <% end %>
 			    <% end %>
 			  </tbody>
 			</table>
