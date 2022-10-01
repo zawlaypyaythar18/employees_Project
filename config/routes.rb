@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   end
   
   resources :employees
-  # get 'home/index'
-
-  root 'home#index'
+  get 'home/index'
+  # root 'home#index'
+  root 'employees#index'
   get 'home/addemployee'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
